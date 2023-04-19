@@ -3,7 +3,7 @@ import Product from './Product';
 
 function ProductFeed({ products }) {
   return (
-    <div className='grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-40 mx-auto'>
+    <div className='grid grid-flow-row-dense sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-40 mx-auto'>
         {products.slice(0,4).map(({id , title, price, description, image, category}) => (
         <Product 
             key={id}
@@ -20,7 +20,7 @@ function ProductFeed({ products }) {
             src="https://links.papareact.com/dyz" alt="" 
             className='md:col-span-full'    
         />
-        <div className='md:col-span-2'>
+        <div className='md:col-span-2 sm:col-span-1'>
             {products.slice(4,5).map(({id , title, price, description, image, category}) => (
             <Product 
                 key={id}
@@ -32,9 +32,8 @@ function ProductFeed({ products }) {
                 category={category}
             />
             ))}
-        </div>
         
-        {products.slice(5,13).map(({id , title, price, description, image, category}) => (
+            {products.slice(5,13).map(({id , title, price, description, image, category}) => (
             <Product 
                 key={id}
                 id={id}
@@ -45,7 +44,8 @@ function ProductFeed({ products }) {
                 category={category}
             />
             ))}
-        {products.slice(14,16).map(({id , title, price, description, image, category}) => (
+
+            {products.slice(14,16).map(({id , title, price, description, image, category}) => (
             <Product 
                 key={id}
                 id={id}
@@ -56,6 +56,7 @@ function ProductFeed({ products }) {
                 category={category}
             />
             ))}
+        </div>
         <img 
             src="/prime.jpg" alt="" 
             className='md:col-span-full'    
