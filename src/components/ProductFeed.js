@@ -34,7 +34,7 @@ function ProductFeed({ products }) {
             ))}
         </div>
 
-        <div className='md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4'>
+    
         
             {products.slice(5,13).map(({id , title, price, description, image, category}) => (
             <Product 
@@ -47,7 +47,8 @@ function ProductFeed({ products }) {
                 category={category}
             />
             ))}
-        </div>
+        
+        <div className='md:col-span-4'>
 
             {products.slice(14,16).map(({id , title, price, description, image, category}) => (
             <Product 
@@ -60,6 +61,7 @@ function ProductFeed({ products }) {
                 category={category}
             />
             ))}
+        </div>
       
         <img 
             src="/prime.jpg" alt="" 
